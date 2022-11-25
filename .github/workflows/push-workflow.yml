@@ -30,7 +30,7 @@ jobs:
           MASTODONT_ACCESS_TOKEN: ${{ secrets.MASTODONT_ACCESS_TOKEN }}
         run: |
           mastodont \
-            -e https://masto.yttrx.com \
+            -e https://masto.yttrx.com/admin/domain_blocks \
             -t $MASTODONT_ACCESS_TOKEN \
             -b https://raw.githubusercontent.com/waffle2k/mastodont/main/blocklist.txt \
             -s suspend \

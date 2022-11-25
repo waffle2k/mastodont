@@ -27,7 +27,7 @@ jobs:
 
       - name: Update blocklist
         env:
-          MASTODONT_ACCESS_TOKEN: ${{ secrets.MASTODONT_ACCESS_TOKEN }}
+          MASTODONT_ACCESS_TOKEN: ${{ MASTODONT_ACCESS_TOKEN }}
           MASTODONT_INSTANCE_URL: https://masto.yttrx.com
           MASTODONT_BLOCKLIST: https://raw.githubusercontent.com/waffle2k/mastodont/main/blocklist.txt
         run: |

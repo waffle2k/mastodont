@@ -26,11 +26,13 @@ jobs:
         run: npm i -g mastodont
 
       - name: Update blocklist
+        env:
+          MASTODONT_ACCESS_TOKEN: ${{ secrets.MASTODONT_ACCESS_TOKEN }}
         run: |
           mastodont \
-          -e https://masto.yttrx.com \
-            -t ${{ secrets.MASTODONT_ACCESS_TOKEN }} \
+            -e https://masto.yttrx.com \
+            -t $MASTODONT_ACCESS_TOKEN \
             -b https://raw.githubusercontent.com/waffle2k/mastodont/main/blocklist.txt \
             -s suspend \
-            --private-comment "Added from shared blocklist, $(date +%F %T)" \
+            --private-comment "Added from shared blocklist, $(date %I)" \
             --non-interactive

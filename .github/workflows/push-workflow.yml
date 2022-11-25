@@ -1,5 +1,4 @@
 name: Update server blocklist
-description: This workflow runs whenever the blocklist file is updated in the repository
 on:
   push:
     branches:
@@ -30,7 +29,7 @@ jobs:
         env:
           MASTODONT_ACCESS_TOKEN: ${{ secrets.MASTODONT_ACCESS_TOKEN }}
           MASTODONT_INSTANCE_URL: https://masto.yttrx.com
-          MASTODONT_BLOCKLIST: https://raw.githubusercontent.com/my-community/blocklist/main/blocklist.txt
+          MASTODONT_BLOCKLIST: https://raw.githubusercontent.com/waffle2k/mastodont/main/blocklist.txt
         run: |
           mastodont \
             -e $MASTODONT_INSTANCE_URL \
